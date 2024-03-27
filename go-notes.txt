@@ -1,0 +1,46 @@
+- go help 'help you need'
+- godoc
+- go env GOPATH
+
+- Everything is a type in golang.
+1. Basic types: string, bool, numeric (int8, float32, complex64 etc).
+2. Composite types: pointer, struct, func, container (array, slice, map), channel, interface.
+3. Custom types
+
+note: byte is an alias for uint8 and rune is for int32.
+
+- Formatting directives
+%v: Default format. It prints the value in the default format.
+%+v: Prints the detailed format for struct types.
+%T: Prints the type of the value.
+%d: Prints the value in decimal format (for integers).
+%f: Prints the value in floating-point format.
+%s: Prints the value as a string.
+%p: Prints the pointer value in hexadecimal notation.
+
+- GOOS="linux" go build
+
+-  In Go, when you access a specific index of a string using square brackets, it returns the byte value (ASCII value) of the character at that index.
+
+- Memory mgmt in go: new() and make()
+When making any dynamic types such as slices, maps, channels etc, always keep a habit of doing it with make keyword.
+
+- In slices and array if you don't use the actual size, go itself put the data in rest of the indexes.
+ex. If you have an array of size 3 with int type and you only put 9 at 0th index, go does this: [9, 0, 0]
+with strings it puts a extra black space.
+
+- When you define the size of an array it's an array and when you don't it's a slice.
+
+- In slices, number before : is inclusive but number after : is exlusive.
+Always assign/remove/add elements in slices using append function.
+The length of a slice is the number of elements it contains.
+The capacity of a slice is the number of elements in the underlying array, counting from the first element in the slice.
+The length and capacity of a slice s can be obtained using the expressions len(s) and cap(s).
+
+- Maps (also knows as hashmaps in java) are collection of key-value pair.
+
+- In go there's only one interative/loop which is for. Go also has other common keywords like continue, break and goto which works exact same as other langs.
+
+- structs are similar to classes in go.
+
+- switch cases has a keyword named fallthrough. It is used to transfer control to the next case even though the case is evaluated true.
